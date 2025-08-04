@@ -1,0 +1,47 @@
+.whatsapp-text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.whatsapp-text .icon_whatsapp{
+    font-size: 20px;
+    color: #25d366;
+}
+
+.steps-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-wrap: nowrap;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.steps-list li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px
+}
+
+.border-style{
+    border: 1px solid rgba(128, 128, 128, 0.466);
+    border-radius: 8px;
+    padding: 2px;
+    font-size: 25px;
+}
+
+.step-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 32px;
+    vertical-align: middle;
+    color: black;
+}

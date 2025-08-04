@@ -1,0 +1,32 @@
+.login-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 50px;
+    padding-left: 35px;
+}
+
+.login-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    color: #00d053;
+}
+
+.login-logo i{
+    font-size: 35px;
+    display: flex;
+    flex-direction: row;
+}
+
+.login-logo span{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+}

@@ -1,0 +1,16 @@
+.login-screen{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 100%;
+    background-color: #fcf5eb;
+}
+
+.main-general-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 16px;
+    margin-top: 10px;
+    width: 872px;
+}

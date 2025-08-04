@@ -1,0 +1,48 @@
+.download-banner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 25px;
+    padding: 25px 40px;
+    gap: 20px;
+    background-color: #ffffff;
+}
+
+.download-banner-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    gap: 5px;
+}
+
+.download-button{
+    width: 160px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #25d366;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.download-button span{
+    margin-left: 10px;
+}
+
+.download-button:hover{
+    background-color: black;
+    color: white;
+}
+
+.download-banner-title{
+    font-size: 19px;
+    font-weight: 400;
+}

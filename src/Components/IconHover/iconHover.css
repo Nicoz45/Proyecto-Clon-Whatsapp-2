@@ -1,0 +1,31 @@
+.icon-hover{
+    position:relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.icon-hover .icon-floating{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    z-index: 10;
+}
+
+.icon-hover .icon-floating::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #fff transparent transparent transparent;
+}
