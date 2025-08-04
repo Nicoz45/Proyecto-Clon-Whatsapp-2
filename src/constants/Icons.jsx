@@ -9,6 +9,8 @@ import { HiOutlineExclamationCircle } from "react-icons/hi2";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { VscSend } from "react-icons/vsc";
+import { LuMessageSquarePlus } from "react-icons/lu";
+import { IoMdMore } from "react-icons/io";
 
 
 
@@ -18,7 +20,7 @@ const ICONS = {
     CircleTwo: PiNumberCircleTwoThin,
     CircleThree: PiNumberCircleThreeThin,
     CircleFour: PiNumberCircleFourThin,
-    Menu: CiMenuKebab,
+    Menu: IoMdMore,
     Settings: GrSettingsOption,
     Whatsapp: FaSquareWhatsapp,
     ArrowUpRight: GoArrowUpRight,
@@ -27,5 +29,6 @@ const ICONS = {
     ArrowRightOpen: IoIosArrowForward,
     DeleteButton: RiDeleteBinLine,
     SendIcon: VscSend,
+    MessageSquare: LuMessageSquarePlus,
 }
 export default ICONS

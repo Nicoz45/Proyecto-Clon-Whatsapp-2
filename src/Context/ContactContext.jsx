@@ -1,69 +1,64 @@
 import React, { createContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { getContactById } from "../Services/contactService";
 
 export const ContactContext = createContext()
 
-export const ContactProvider = ({ children }) => {
-    
-    const { contact_id } = useParams()
-
-    
+export const ContactProvider = ({ children, contactId }) => {
     const [contact_info, setContact] = useState(null)
-    
 
-    
     useEffect(() => {
-        setTimeout(() => {
+        if (contactId) {
+            setContact(null); // Limpiar estado anterior
             
-            const contact_selected = getContactById(contact_id)
-            console.log(getContactById)
-            
-            setContact(contact_selected)
-        },
-            1500
-        )
-    },
-        [contact_id] 
-    )
+            setTimeout(() => {
+                const contact_selected = getContactById(contactId)
+                setContact(contact_selected)
+            }, 500) // Reducido el tiempo de carga
+        }
+    }, [contactId])
 
     const deleteMessageById = (message_id) => {
+        if (!contact_info) return;
         
-        const new_message_list = []
-        for (const message of contact_info.messages) {
-            if (message.id !== message_id) {
-                new_message_list.push(message)
-            }
-        }
+        const new_message_list = contact_info.messages.filter(
+            message => message.id !== message_id
+        );
+        
         setContact({ ...contact_info, messages: new_message_list })
     }
 
     const addNewMessage = (text) => {
+        console.log('addNewMessage', text)
+        if (!contact_info) return;
+        
         const new_message = {
-            emisor: 'Yo',
-            hora: '17:30', 
-            texto: text,
+            sender: 'Yo',
+            hour: new Date().toLocaleTimeString('es-ES', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            }),
+            text: text,
             status: 'no-visto',
-            id: contact_info.messages.length + 1
+            id: Date.now() // Usar timestamp para IDs únicos
         }
 
-        const cloned_message_list = [...contact_info.messages] 
-        
-        cloned_message_list.push(new_message)
+        const cloned_message_list = [...contact_info.messages, new_message]
         setContact({ ...contact_info, messages: cloned_message_list })
     }
 
-    const deleteAllMessages = () => setContact({ ...contact_info, messages: [] })
+    const deleteAllMessages = () => {
+        if (!contact_info) return;
+        setContact({ ...contact_info, messages: [] })
+    }
 
     return (
-        <ContactContext.Provider value={
-            {
-                contact_info: contact_info,
-                deleteAllMessages: deleteAllMessages,
-                deleteMessageById: deleteMessageById,
-                addNewMessage: addNewMessage
-            }
-        }>
+        <ContactContext.Provider value={{
+            contact_info: contact_info,
+            deleteAllMessages: deleteAllMessages,
+            deleteMessageById: deleteMessageById,
+            addNewMessage: addNewMessage,
+            isLoading: !contact_info
+        }}>
             {children}
         </ContactContext.Provider>
     )

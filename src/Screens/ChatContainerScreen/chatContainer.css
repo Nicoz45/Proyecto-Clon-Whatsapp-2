@@ -1,6 +1,88 @@
-.chat-container{
+.chat-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 100vh;
+    background-color: #161717;
+}
+
+.contacts-sidebar {
     width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    background-color: #161717;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contacts-header {
+    padding: 20px;
+    background-color: #161717;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contacts-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contacts-list-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #161717;
+    position: relative;
+}
+
+.no-chat-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #161717;
+}
+
+.welcome-message {
+    text-align: center;
+    color: #667781;
+}
+
+.welcome-message h2 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 300;
+    color: #41525d;
+}
+
+.welcome-message p {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacts-sidebar {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .chat-area {
+        display: none;
+    }
+    
+    .chat-area.mobile-active {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
 }

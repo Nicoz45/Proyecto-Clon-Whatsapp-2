@@ -8,24 +8,24 @@ const contacts = [
         connection_status: 'offline',
         messages: [
             {
-                emisor: 'Yo',
-                hora: '22:30',
+                sender: 'Yo',
+                hour: '22:30',
                 id: 1,
-                texto: 'hola',
+                text: 'hola',
                 status: 'visto'
             },
             {
-                emisor: 'Otro',
-                hora: '22:31',
+                sender: 'Otro',
+                hour: '22:31',
                 id: 2,
-                texto: 'Hola que tal?',
+                text: 'Hola que tal?',
                 status: 'visto'
             },
             {
-                emisor: 'Yo',
-                hora: '22:32',
+                sender: 'Yo',
+                hour: '22:32',
                 id: 3,
-                texto: 'Todo esta bien.',
+                text: 'Todo esta bien.',
                 status: 'visto'
             }
         ]
@@ -39,24 +39,24 @@ const contacts = [
         connection_status: 'offline',
         messages: [
             {
-                emisor: 'Yo',
-                hora: '22:30',
+                sender: 'Yo',
+                hour: '22:30',
                 id: 1,
-                texto: 'hola',
+                text: 'hola',
                 status: 'visto'
             },
             {
-                emisor: 'Otro',
-                hora: '22:31',
+                sender: 'Otro',
+                hour: '22:31',
                 id: 2,
-                texto: 'Hola que tal?',
+                text: 'Hola que tal?',
                 status: 'visto'
             },
             {
-                emisor: 'Yo',
-                hora: '22:32',
+                sender: 'Yo',
+                hour: '22:32',
                 id: 3,
-                texto: 'Todo esta bien.',
+                text: 'Todo esta bien.',
                 status: 'visto'
             }
         ]
@@ -70,24 +70,24 @@ const contacts = [
         connection_status: 'online',
         messages: [
             {
-                emisor: 'Yo',
-                hora: '22:30',
+                sender: 'Yo',
+                hour: '22:30',
                 id: 1,
-                texto: 'hola',
+                text: 'hola',
                 status: 'visto'
             },
             {
-                emisor: 'Otro',
-                hora: '22:31',
+                sender: 'Otro',
+                hour: '22:31',
                 id: 2,
-                texto: 'Hola que tal?',
+                text: 'Hola que tal?',
                 status: 'visto'
             },
             {
-                emisor: 'Yo',
-                hora: '22:32',
+                sender: 'Yo',
+                hour: '22:32',
                 id: 3,
-                texto: 'Todo esta bien.',
+                text: 'Todo esta bien.',
                 status: 'visto'
             }
         ]
@@ -98,9 +98,10 @@ export const getContactList = () => {
     return contacts
 }
 
-export const getContactById = (contact_id) => {
+export const getContactById = (contactId) => {
+    console.log('contact_id', contactId)
     for (const contact of contacts) {
-        if (Number(contact.id) === Number(contact_id)) {
+        if (Number(contact.id) === Number(contactId)) {
             return contact
         }
     }

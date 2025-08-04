@@ -1,27 +1,46 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import MessageCard from "./Message";
 import { ContactContext } from "../../Context/ContactContext";
 
 const MessagesList = () => {
-    const {contact_info} = useContext(ContactContext)
-    if(contact_info.messages.length === 0){
-        return(<span>Aun no hay mensajes</span>)
-    }
-    const lista_mensajes = contact_info.messages.map((message) => {
-        return (
-            <MessageCard
-                emisor={message.emisor}
-                texto={message.texto}
-                hora={message.hora}
-                key={message.id}
-                id={message.id}
-                status={message.status}
-            />
-        )
-    })
-    return(
-        <div>{lista_mensajes}</div>
-    )
-}
+    const { contact_info } = useContext(ContactContext);
+    const messagesEndRef = useRef(null);
 
-export default MessagesList
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [contact_info?.messages]);
+
+    if (!contact_info || contact_info.messages.length === 0) {
+        return (
+            <div className="no-messages">
+                <div className="no-messages-content">
+                    <p>🗨️</p>
+                    <span>No hay mensajes aún</span>
+                    <small>Escribe tu primer mensaje abajo</small>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="messages-list">
+            {contact_info.messages.map((message) => (
+                <MessageCard
+                    key={message.id}
+                    emisor={message.sender}
+                    texto={message.text}
+                    hora={message.hour}
+                    id={message.id}
+                    status={message.status}
+                />
+            ))}
+            <div ref={messagesEndRef} />
+        </div>
+    );
+};
+
+export default MessagesList;

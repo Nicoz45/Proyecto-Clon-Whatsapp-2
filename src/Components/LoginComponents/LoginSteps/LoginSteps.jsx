@@ -5,7 +5,6 @@ import "./loginSteps.css"
 import StepsList from "./StepsList";
 import { Link } from "react-router";
 const LoginStepsAndQr = () => {
-    const id = '123'
     return (
         <div className="general-container-steps-qr">
             <div className="qr-and-list-container">
@@ -23,7 +22,7 @@ const LoginStepsAndQr = () => {
                     <span className="checkbox-span">Mantener la sesion iniciada en este navegador.<span><IconHover className="icon-hover" name="Si seleccionas esta opcion, se mantendra la sesion iniciada
                         en WhatsApp Web despues de cerrar la pestaña del navegador"><ICONS.exclamation/></IconHover></span></span>
                 </div>
-                <Link to={`/chats/${id}/contacts`} className="link-number">
+                <Link to= '/chats' className="link-number">
                 <span className="text-number-link">Iniciar sesión con numero de telefono</span>
                 <span><ICONS.ArrowRightOpen/></span></Link>
             </div>

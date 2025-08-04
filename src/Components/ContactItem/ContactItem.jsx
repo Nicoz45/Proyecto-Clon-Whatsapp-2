@@ -1,15 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-const ContactItem = ({ contact }) => {
+const ContactItem = ({ contact, onSelect, isSelected }) => {
+    const handleClick = () => {
+        onSelect(contact.id);
+    };
+
+    const lastMessage = contact.messages && contact.messages.length > 0 
+        ? contact.messages[contact.messages.length - 1] 
+        : null;
+
     return (
-        <Link to={`/contact/${contact.id}/messages`}> 
-            <img src={contact.avatar} alt={contact.name} width={100}/>
-            <h2>{contact.name}</h2>
-            <span>Última conexión: {contact.last_connection}</span>
-            <span>Estado de conexión: {contact.connection_status}</span>
-        </Link>
-    )
-}
+        <div 
+            className={`contact-item ${isSelected ? 'selected' : ''}`}
+            onClick={handleClick}
+        >
+            <div className="contact-avatar">
+                <img src={contact.avatar} alt={contact.name} />
+            </div>
+            
+            <div className="contact-info">
+                <div className="contact-header">
+                    <h3 className="contact-name">{contact.name}</h3>
+                    <span className="contact-time">
+                        {lastMessage ? lastMessage.hour : contact.last_connection}
+                    </span>
+                </div>
+                
+                <div className="contact-preview">
+                    <p className="last-message">
+                        {lastMessage 
+                            ? `${lastMessage.sender === 'Yo' ? 'Tú: ' : ''}${lastMessage.text}`
+                            : contact.description
+                        }
+                    </p>
+                    <div className="contact-status">
+                        {contact.connection_status === 'online' && (
+                            <span className="online-indicator"></span>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-export default ContactItem
+export default ContactItem;

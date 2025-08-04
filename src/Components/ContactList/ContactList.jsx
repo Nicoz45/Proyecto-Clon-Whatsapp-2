@@ -2,15 +2,19 @@ import React from 'react';
 import ContactItem from '../ContactItem/ContactItem';
 
 
-const ContactList = ({ contacts}) => {
-
+const ContactList = ({ contacts, onContactSelect, selectedContactId }) => {
     return (
-        <div>
+        <div className="contacts-list-container">
             {contacts.map((contact) => (
-                <ContactItem key={contact.id} contact={contact}/>
+                <ContactItem 
+                    key={contact.id} 
+                    contact={contact}
+                    onSelect={onContactSelect}
+                    isSelected={selectedContactId === contact.id}
+                />
             ))}
         </div>
     );
 };
 
-export default ContactList
+export default ContactList;

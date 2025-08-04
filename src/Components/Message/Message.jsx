@@ -2,23 +2,52 @@ import React, { useContext, useState } from "react";
 import { ContactContext } from "../../Context/ContactContext";
 
 
-
-const MessageCard = ({emisor, hora, id, texto, status}) => {
-    const {deleteMessageById} =useContext(ContactContext)
-    const [message_selected, setMessageSelected] = useState(false)
+const MessageCard = ({ sender, hour, id, text, status }) => {
+    const { deleteMessageById } = useContext(ContactContext);
+    const [message_selected, setMessageSelected] = useState(false);
     
     const handleChangeMessageSelected = (e) => { 
-    e.preventDefault()
-        setMessageSelected(true)
+        e.preventDefault();
+        setMessageSelected(!message_selected);
     }
-    return(
-        <div onContextMenu={handleChangeMessageSelected}>
-            <h2>{emisor}</h2>
-            <h3>{texto}</h3>
-            <span>{hora}</span>
-            {
-                message_selected && <button onClick={() => {deleteMessageById(id)}}>Eliminar</button>
-            }
+
+    const handleDeleteMessage = () => {
+        deleteMessageById(id);
+        setMessageSelected(false);
+    }
+
+    const isOwnMessage = sender === 'Yo';
+
+    return (
+        <div 
+            className={`message-container ${isOwnMessage ? 'own-message' : 'other-message'}`}
+            onContextMenu={handleChangeMessageSelected}
+        >
+            <div className="message-bubble">
+                <div className="message-content">
+                    <p className="message-text">{text}</p>
+                </div>
+                <div className="message-info">
+                    <span className="message-time">{hour}</span>
+                    {isOwnMessage && (
+                        <span className={`message-status ${status}`}>
+                            {status === 'visto' ? '✓✓' : '✓'}
+                        </span>
+                    )}
+                </div>
+                
+                {message_selected && (
+                    <div className="message-actions">
+                        <button 
+                            onClick={handleDeleteMessage}
+                            className="delete-message-btn"
+                            title="Eliminar mensaje"
+                        >
+                            🗑️
+                        </button>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

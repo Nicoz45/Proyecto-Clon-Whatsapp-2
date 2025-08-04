@@ -1,20 +1,21 @@
 import React from "react"
-import ChatScreen from "./Screens/ChatScreen/ChatScreen"
 import { Route, Routes } from "react-router"
 import ContactScreen from "./Screens/ContactScreen/ContactScreen"
-import { ContactContext, ContactProvider } from "./Context/ContactContext"
+import ChatContainerScreen from "./Screens/ChatContainerScreen/ChatContainer"
 import './index.css'
 import LoginScreen from "./Screens/LoginScreen/LoginScreen"
 
-
-
 const App = () => {
     return (
-        <div >
+        <div>
             <Routes>
                 <Route path="/" element={<LoginScreen/>}/>
+                {/* Ruta antigua para compatibilidad */}
                 <Route path="/chats/:id/contacts" element={<ContactScreen/>}/>
-                <Route path="/contact/:contact_id/messages" element={<ContactProvider><ChatScreen/></ContactProvider>}/>
+                {/* Nueva ruta principal para el layout de WhatsApp */}
+                <Route path="/chats" element={<ChatContainerScreen/>}/>
+                {/* Ruta antigua para mensajes individuales */}
+                <Route path="/contact/:contact_id/messages" element={<ContactScreen/>}/>
             </Routes>
         </div>
     )
