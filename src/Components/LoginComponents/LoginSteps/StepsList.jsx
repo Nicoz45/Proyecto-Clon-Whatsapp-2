@@ -1,7 +1,7 @@
 // src/Components/LoginComponents/LoginSteps/LoginSteps.js
 import React from 'react';
-import ICONS from '../../../constants/icons';
 import './stepsList.css'
+import ICONS from '../../../constants/Icons';
 
 const steps = [
     {

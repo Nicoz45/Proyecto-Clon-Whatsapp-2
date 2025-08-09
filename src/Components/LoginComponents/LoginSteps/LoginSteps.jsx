@@ -1,9 +1,9 @@
 import React from "react";
-import ICONS from "../../../constants/icons";
 import IconHover from "../../IconHover/IconHover";
 import "./loginSteps.css"
 import StepsList from "./StepsList";
 import { Link } from "react-router";
+import ICONS from "../../../constants/Icons";
 const LoginStepsAndQr = () => {
     return (
         <div className="general-container-steps-qr">
