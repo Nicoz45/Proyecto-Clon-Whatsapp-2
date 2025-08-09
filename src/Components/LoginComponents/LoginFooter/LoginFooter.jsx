@@ -1,7 +1,7 @@
 import React from "react"
-import ICONS from "../../../constants/icons"
 import "./loginFooter.css"
 import { Link } from "react-router"
+import ICONS from "../../../constants/Icons"
 
 
 const LoginFooter = () => {

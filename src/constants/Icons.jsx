@@ -2,7 +2,7 @@ import React from "react";
 import { PiNumberCircleOneThin, PiNumberCircleTwoThin, PiNumberCircleThreeThin, PiNumberCircleFourThin } from "react-icons/pi";
 import { GrSettingsOption, GrTarget} from "react-icons/gr";
 import { FaSquareWhatsapp } from "react-icons/fa6";
-import { GoArrowUpRight, GoGear } from "react-icons/go";
+import { GoArrowUpRight } from "react-icons/go";
 import { MdOutlineLock, MdOutlineSettings } from "react-icons/md";
 import { HiOutlineExclamationCircle } from "react-icons/hi2";
 import { IoIosArrowForward, IoMdMore, IoIosArrowDown } from "react-icons/io";
