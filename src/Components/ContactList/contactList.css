@@ -1,0 +1,17 @@
+.contacts-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 5px 10px;
+    gap: 2px;
+    overflow: auto;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .contacts-list-container{
+        width: 100%;
+    }
+    
+}

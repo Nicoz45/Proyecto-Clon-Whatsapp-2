@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactItem from '../ContactItem/ContactItem';
-
+import './contactList.css'
 
 const ContactList = ({ contacts, onContactSelect, selectedContactId }) => {
     return (

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import MessageCard from "./Message";
 import { ContactContext } from "../../Context/ContactContext";
+import "./messageList.css"
 
 const MessagesList = () => {
     const { contact_info } = useContext(ContactContext);
@@ -18,7 +19,6 @@ const MessagesList = () => {
         return (
             <div className="no-messages">
                 <div className="no-messages-content">
-                    <p>🗨️</p>
                     <span>No hay mensajes aún</span>
                     <small>Escribe tu primer mensaje abajo</small>
                 </div>
@@ -31,9 +31,9 @@ const MessagesList = () => {
             {contact_info.messages.map((message) => (
                 <MessageCard
                     key={message.id}
-                    emisor={message.sender}
-                    texto={message.text}
-                    hora={message.hour}
+                    sender={message.sender}
+                    text={message.text}
+                    hour={message.hour}
                     id={message.id}
                     status={message.status}
                 />

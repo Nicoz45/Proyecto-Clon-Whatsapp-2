@@ -1,40 +1,61 @@
 const contacts = [
     {
         id: 1,
-        name: 'Pedro',
-        description: 'Solo se vive una vez',
-        avatar: 'https://forbes.es/wp-content/uploads/2023/04/pantera-rosa.jpg',
+        name: 'Pedro Picapiedra',
+        description: '¡Yabba Dabba Doo!',
+        avatar: '/images/Pedro-Picapiedra.jpeg',
         last_connection: '11:35',
         connection_status: 'offline',
         messages: [
             {
-                sender: 'Yo',
+                sender: 'Otro',
                 hour: '22:30',
                 id: 1,
-                text: 'hola',
+                text: 'Hola',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:31',
+                id: 2,
+                text: 'Hola Pedro',
                 status: 'visto'
             },
             {
                 sender: 'Otro',
-                hour: '22:31',
-                id: 2,
-                text: 'Hola que tal?',
+                hour: '22:32',
+                id: 3,
+                text: 'Como estas cara de ostion?',
                 status: 'visto'
             },
             {
                 sender: 'Yo',
-                hour: '22:32',
-                id: 3,
-                text: 'Todo esta bien.',
+                hour: '22:33',
+                id: 4,
+                text: 'Bien y vos?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:34',
+                id: 5,
+                text: 'Yabba Dabba Doo',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:35',
+                id: 6,
+                text: '¿Listo para ir a la cantera?',
                 status: 'visto'
             }
         ]
     },
     {
         id: 2,
-        name: 'Juan',
-        description: 'Rompe el suelo con la batidora',
-        avatar: 'https://media.c5n.com/p/28695fdfa6d10b39f9b6236c96b26583/adjuntos/326/imagenes/000/305/0000305153/790x0/smart/-el-grinch-netflix.jpg',
+        name: 'Pablo Marmol',
+        description: 'Enano cara de ostion',
+        avatar: '/images/Pablo-Marmol.jpeg',
         last_connection: '11:48',
         connection_status: 'offline',
         messages: [
@@ -42,7 +63,7 @@ const contacts = [
                 sender: 'Yo',
                 hour: '22:30',
                 id: 1,
-                text: 'hola',
+                text: 'Hola Pablo',
                 status: 'visto'
             },
             {
@@ -56,41 +77,193 @@ const contacts = [
                 sender: 'Yo',
                 hour: '22:32',
                 id: 3,
-                text: 'Todo esta bien.',
+                text: 'Todo bien. y tu?',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:33',
+                id: 4,
+                text: 'Que te parece si vamos a la cantera con Pedro?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:34',
+                id: 5,
+                text: 'Si, pero hoy podríamos ir en bici?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:35',
+                id: 6,
+                text: 'Mi espalda todavía no se recupera del último golpe con el brontosaurio.',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:36',
+                id: 7,
+                text: '¿En bici?',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:37',
+                id: 8,
+                text: '¡Pablo, eso no es de hombres de las cavernas modernos!',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:38',
+                id: 9,
+                text: 'Ah no?',
                 status: 'visto'
             }
         ]
     },
     {
         id: 3,
-        name: 'Pepe',
-        description: 'La familia',
-        avatar: 'https://scontent-eze1-2.xx.fbcdn.net/v/t39.30808-6/300390812_415738067326849_360849105729440073_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEOBl5deCaRVgvUWMvCElukUsatXrrljExSxq1euuWMTGterfEPH39P5lEvttKtCfNKtbUU6C_GDxXF0hD0aDCV&_nc_ohc=f-dnzEVEKyIQ7kNvwE15g0S&_nc_oc=AdlKGLGhGMMMNOjk3-_B7S2vb-f0Q-EbzeBQaGRGcahXJC_bN-FBpFtmRL7Jmhkc3jU&_nc_zt=23&_nc_ht=scontent-eze1-2.xx&_nc_gid=cmE1CUasMraY9jQhcx-9KQ&oh=00_AfRvZ7_43HxhJ0E4Q-xno99xjxtlKQ1-BQrTcIXH2EVNww&oe=6889AFA7',
+        name: 'Vilma Picapiedra',
+        description: '¡A crédito!',
+        avatar: '/images/Vilma-Picapiedra.jpeg',
         last_connection: 'ahora',
         connection_status: 'online',
         messages: [
             {
-                sender: 'Yo',
+                sender: 'Otro',
                 hour: '22:30',
                 id: 1,
-                text: 'hola',
+                text: 'Hola vecino!',
                 status: 'visto'
             },
             {
-                sender: 'Otro',
+                sender: 'Yo',
                 hour: '22:31',
                 id: 2,
-                text: 'Hola que tal?',
+                text: 'Hola Vilma!!',
                 status: 'visto'
             },
             {
                 sender: 'Yo',
                 hour: '22:32',
                 id: 3,
-                text: 'Todo esta bien.',
+                text: 'Esta todo bien?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:33',
+                id: 4,
+                text: 'Todo bien y vos?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:34',
+                id: 5,
+                text: 'Podrias decirle a Pedro que no deje el troncomovil tirado en la entrada?',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:35',
+                id: 6,
+                text: 'Pero vilma, lo dejo ahi para ir a la cantera.',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:36',
+                id: 7,
+                text: '¿Y mientras tanto, yo cómo saco a Dino a pasear?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:37',
+                id: 8,
+                text: '¿En un pterodáctilo-taxi?',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:38',
+                id: 9,
+                text: 'Tranquila, ya le aviso a Pedro...',
                 status: 'visto'
             }
         ]
+    },
+    {
+        id: 4,
+        name: 'Betty Marmol',
+        description: 'Cuchi Cuchi',
+        avatar: '/images/Betty-Marmol.jpeg',
+        last_connection: 'ahora',
+        connection_status: 'online',
+        messages: [
+            {
+                sender: 'Otro',
+                hour: '22:30',
+                id: 1,
+                text: 'Hola vecino!, que tal?',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:31',
+                id: 2,
+                text: 'Me pasas con Pablo Por favor?',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:32',
+                id: 3,
+                text: 'Si, ya te paso con Pablo.',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:33',
+                id: 4,
+                text: 'Hola Betty, soy Pablo',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:34',
+                id: 5,
+                text: 'Pablo, ¿me puedes explicar por qué hay un dinosaurio durmiendo en el jardín?',
+                status: 'visto'
+            },
+            {
+                sender: 'Yo',
+                hour: '22:35',
+                id: 6,
+                text: 'Ah… eso… bueno, estaba de camino a casa y me siguió… pensé que se veía simpático.',
+                status: 'visto'
+            },
+            {
+                sender: 'Otro',
+                hour: '22:36',
+                id: 7,
+                text: 'Pablo, es un triceratops! No es un gatito.',
+                status: 'visto'
+            },
+        ]
+    },
+    {
+        id: 5,
+        name: 'Mr Slate',
+        description: 'Ahi se va el mejor ejecutivo que he tenido',
+        avatar: '/images/mr-slate.jpeg',
+        last_connection: 'ahora',
+        connection_status: 'online',
+        messages: []
     },
 ]
 

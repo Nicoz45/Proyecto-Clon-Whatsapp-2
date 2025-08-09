@@ -1,0 +1,135 @@
+.message-input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 2px;
+    z-index: 3;
+}
+
+.message-input{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #292a2a;
+    border-radius: 50px;
+    padding: 18px 90px;
+    gap: 10px;
+    z-index: 3;
+    color: white;
+    border: none;
+    font-size: 14px;
+}
+
+.message-form{
+    display: flex;
+    z-index: 3;
+}
+
+.send-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 0px 1px 1px black;
+    border-radius: 50%;
+    background-color: #21c063;
+    cursor: pointer;
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 4;
+    transition: all 0s ease-in-out;
+}
+
+.send-btn:hover{
+    background-color: #21c06391;
+}
+
+.send-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+}
+
+.white-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0s ease-in-out;
+}
+
+.white-icon:hover{
+    background-color: #444646;
+}
+
+.emoji-btn{
+    position: absolute;
+    left: 60px;
+    bottom: 21px;
+    z-index: 4;
+}
+
+.plus-button{
+    position: absolute;
+    font-size: 30px;
+    left: 18px;
+    bottom: 22px;
+    z-index: 4
+}
+
+@media screen and (max-width: 768px) {
+    .message-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .message-input{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .message-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .message-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .message-input{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+}

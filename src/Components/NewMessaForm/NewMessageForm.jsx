@@ -1,46 +1,57 @@
 import React, { useContext, useState } from "react";
 import { ContactContext } from "../../Context/ContactContext";
+import ICONS from "../../constants/Icons";
+import "./newMessageForm.css"
 
 
 const NewMessageForm = () => {
     const { addNewMessage } = useContext(ContactContext);
     const [message, setMessage] = useState('');
 
+    const sendMessage = () => {
+        if (message === '') return
+        addNewMessage(message)
+        setMessage('')
+    }
+
     const handleSubmitSendMessageForm = (event) => {
         event.preventDefault();
-        console.log('enviando mensaje')
-        if (message.trim() === '') return(
-            addNewMessage(message.trim())
-        )
-        console.log('mensaje enviado', message)
-        setMessage('')
+        setMessage()
+    }
+
+    const handleKeyDown = (event) => {
+        if(event.key === 'Enter' && !event.shiftKey){
+            event.preventDefault()
+            sendMessage()
+        }
     }
 
     return (
         <form onSubmit={handleSubmitSendMessageForm} className="message-form">
             <div className="message-input-container">
-                <button type="button" className="emoji-btn" title="Emoji">
-                    😊
+                <button type="button" className="plus-button white-icon" title="Adjuntar archivos">
+                    <ICONS.PlusIcon className="plus-icon" />
                 </button>
-                
+                <button type="button" className="emoji-btn white-icon" title="Emoji">
+                    <ICONS.StickerIcon className="sticker-icon" />
+                </button>
                 <input
                     type="text"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     placeholder="Escribe un mensaje"
                     className="message-input"
                     autoComplete="off"
                 />
-                
-                <button 
-                    type="submit" 
+                <button
+                    type="submit"
                     className="send-btn"
-                    disabled={message.trim() === ''}
+                    onClick={sendMessage}
+                    disabled={message === ''}
                     title="Enviar mensaje"
                 >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M1.101 21.757L23.8 12.028L1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"/>
-                    </svg>
+                    <ICONS.SendIcon className="send-icon" />
                 </button>
             </div>
         </form>

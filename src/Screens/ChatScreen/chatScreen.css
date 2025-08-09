@@ -1,0 +1,186 @@
+.chat-contact-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #161717;
+    padding: 8px 10px;
+    width: 100%;
+}
+
+.chat-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 5px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.chat-background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.chat-screen{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messages-area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.chat-contact-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 8px;
+}
+
+.chat-contact-details h4{
+    font-weight: 400;
+}
+
+.buttons-details-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 0px 10px;
+}
+
+.video-arrow-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.video-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 50px;
+    color: white;
+    transition: all 0s ease-in-out;
+    gap: 5px;
+}
+
+.video-button:hover{
+    background-color: #292a2a;
+}
+
+.video-button span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button-details-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    transition: all 0s ease-in-out;
+}
+
+.search-button-details-header:hover{
+    background-color: #292a2a;
+}
+
+.menu-button-details-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    transition: all 0s ease-in-out;
+}
+
+.menu-button-details-header:hover{
+    background-color: #292a2a;
+}
+
+.chat-contact-status{
+    gap: 5px;
+    font-size: 12px;
+}
+
+.chat-loading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; 
+    color: white; 
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+    .chat-contact-info{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .buttons-details-header{
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buttons-details-header{
+        display: none;
+    }
+    
+}
