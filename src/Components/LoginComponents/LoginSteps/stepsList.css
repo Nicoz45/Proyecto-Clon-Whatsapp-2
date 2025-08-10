@@ -1,47 +1,73 @@
-.whatsapp-text{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 50px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.whatsapp-text .icon_whatsapp{
-    font-size: 20px;
-    color: #25d366;
-}
-
-.steps-list{
+.steps-list-container{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    text-wrap: nowrap;
+    text-align: start;
+}
+
+.whatsapp-text{
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    text-wrap: wrap;
+}
+
+.steps-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     list-style: none;
-    margin-top: 30px;
+    gap: 15px;
 }
 
 .steps-list li{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 5px
-}
-
-.border-style{
-    border: 1px solid rgba(128, 128, 128, 0.466);
-    border-radius: 8px;
-    padding: 2px;
-    font-size: 25px;
+    gap: 10px;
 }
 
 .step-icon{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 32px;
-    vertical-align: middle;
+    flex-direction: column;
+    font-size: 30px;
     color: black;
+}
+
+.border-style{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #d1d7db ;
+    border-radius: 5px;
+}
+
+.icon_whatsapp{
+    color: #25d366;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .steps-list-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .steps-list-container{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+    }
+    
 }

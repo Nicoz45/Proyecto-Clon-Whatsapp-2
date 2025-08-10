@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    border: solid 2px black;
+    border: solid 1px black;
     border-radius: 25px;
     padding: 30px 45px;
     padding-bottom: 50px;
@@ -73,11 +73,116 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: 3px solid #25d366;
+    border-bottom: 2px solid #25d366;
 }
 
 .text-number-link:hover{
     color: #25d366;
 }
 
+.steps-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.steps-list-container h2{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+}
+
+@media screen and (max-width: 900px) {
+    .general-container-steps-qr{
+        width: 100%;
+    }
+    .qr-and-list-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sesion-and-number-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .qr-code{
+        display: flex;
+        position: relative;
+        bottom: 250px;
+    }
+    .steps-list-container{
+        display: flex;
+        position: relative;
+        top: 150px;
+        gap: 0px;
+    }
+    .steps-list-container h2{
+        display: flex;
+        position: relative;
+        top: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .qr-code{
+        display: flex;
+        position: relative;
+        bottom: 270px;
+    }
+    .steps-list-container{
+        display: flex;
+        position: relative;
+        top: 150px;
+        gap: 0px;
+    }
+    .steps-list-container h2{
+        display: flex;
+        position: relative;
+        top: 120px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .qr-code{
+        display: flex;
+        position: relative;
+        bottom: 300px;
+    }
+    .steps-list-container{
+        display: flex;
+        position: relative;
+        top: 150px;
+        gap: 0px;
+    }
+    .steps-list-container h2{
+        display: flex;
+        position: relative;
+        top: 120px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .qr-code{
+        display: flex;
+        position: relative;
+        bottom: 300px;
+    }
+    .steps-list-container{
+        display: flex;
+        position: relative;
+        top: 150px;
+        gap: 0px;
+    }
+    .steps-list-container h2{
+        display: flex;
+        position: relative;
+        top: 110px;
+    }
+}
 

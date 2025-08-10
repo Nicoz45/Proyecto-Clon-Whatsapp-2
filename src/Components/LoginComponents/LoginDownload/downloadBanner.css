@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: solid 2px black;
+    border: solid 1px black;
     border-radius: 25px;
     padding: 25px 40px;
     gap: 20px;
@@ -22,6 +22,7 @@
     width: 160px;
     height: 50px;
     border-radius: 50px;
+    border: 1px solid black;
     background-color: #25d366;
     cursor: pointer;
     font-size: 16px;
@@ -45,4 +46,35 @@
 .download-banner-title{
     font-size: 19px;
     font-weight: 400;
+}
+
+.link-download{
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    display: none;
+}
+
+.link-download:hover{
+    color: #25d366;
+}
+
+.download-link-span{
+    border-bottom: #25d366 solid 2px;
+    padding-bottom: 2px;
+}
+
+@media screen and (max-width: 900px) {
+    .link-download{
+        display: block;
+    }
+    .download-button{
+        display: none;
+    }
+    .download-banner-container{
+        width: 100%;
+    }
+    .text-info-to-download{
+        display: none;
+    }
 }

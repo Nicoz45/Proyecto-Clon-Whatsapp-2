@@ -1,7 +1,7 @@
 .login-screen{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     width: 100%;
     background-color: #fcf5eb;
 }
@@ -13,4 +13,22 @@
     gap: 16px;
     margin-top: 10px;
     width: 872px;
+}
+
+@media screen and (max-width: 900px) {
+    .login-screen{
+        width: auto;
+    }
+    .main-general-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .login-screen{
+        width: auto;
+    }
+    .main-general-container{
+        width: 100%;
+    }
 }
