@@ -28,7 +28,6 @@ export const ContactProvider = ({ children, contactId }) => {
     }
 
     const addNewMessage = (text) => {
-        console.log('addNewMessage', text)
         if (!contact_info) return;
         
         const new_message = {

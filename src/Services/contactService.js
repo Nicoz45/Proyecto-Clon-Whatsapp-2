@@ -272,7 +272,6 @@ export const getContactList = () => {
 }
 
 export const getContactById = (contactId) => {
-    console.log('contact_id', contactId)
     for (const contact of contacts) {
         if (Number(contact.id) === Number(contactId)) {
             return contact
